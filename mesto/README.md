@@ -1,7 +1,12 @@
+<<<<<<< HEAD:mesto/README.md
 # Проект МЕСТО созданный на реакте.
 
 - Ссылка на проект: https://dmitriy9427.github.io/mesto-react/ 
+=======
+# Проект Mesto-react. 
+>>>>>>> 14a6f5ece896cc9cd8e9af08fbb9141a9e83a00c:место/README.md
 
+Ссылка на проект: https://dmitriy9427.github.io/mesto-react/
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
