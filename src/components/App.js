@@ -6,7 +6,6 @@ import Footer from './Footer';
 import PopupWithForm from './PopupWithForm';
 import ImagePopup from './ImagePopup';
 
-
 function App()
 {
     const [isEditProfilePopupOpen, setPopupProfileOpened] = React.useState(false);
@@ -14,8 +13,6 @@ function App()
     const [isEditAvatarPopupOpen, setPopupAvatarOpened] = React.useState(false);
 
     const [selectedCard, setCardOpen] = React.useState({});
-
-
 
     //функции открытия попапов
     function handleEditAvatarClick()

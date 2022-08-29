@@ -2,7 +2,6 @@ import React from 'react';
 import { api } from '../utils/Api'
 import Card from './Card';
 
-
 function Main({ onEditProfile, onAddPlace, onEditAvatar, onCardClick })
 {
     const [userName, setUserName] = React.useState("");
@@ -48,7 +47,6 @@ function Main({ onEditProfile, onAddPlace, onEditAvatar, onCardClick })
                 </ul>
             </section>
         </main>
-
     )
 }
 export default Main;

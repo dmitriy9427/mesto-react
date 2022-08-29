@@ -1,6 +1,5 @@
 import React from "react";
 
-
 function Card(props)
 {
 
@@ -24,7 +23,6 @@ function Card(props)
             </div>
         </li>
     )
-
 }
 
 export default Card;
