@@ -1,0 +1,29 @@
+.button {
+    background-color: #000000;
+    color: #ffffff;
+    cursor: pointer;
+    margin-top: 10px;
+    padding: 14px 0 14px;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    border: none;
+    border-radius: 2px;
+    width: 100%;
+}
+
+.button:hover {
+    opacity: 0.8;
+    transition: opacity 1s ease;
+}
+
+@media screen and (max-width: 767px) {
+    .button {
+        font-size: 14px;
+        line-height: 17px;
+        padding: 15px 0 14px;
+    }
+}
