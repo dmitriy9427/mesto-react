@@ -7,7 +7,7 @@ class Api
     }
 
     //проверка ответа от сервера
-    _checkReponse(res)
+    _checkResponse(res)
     {
         if (res.ok) {
             return res.json();
@@ -20,7 +20,7 @@ class Api
     {
         return fetch(`${this._baseUrl}/users/me`, {
             headers: this._headers,
-        }).then(this._checkReponse);
+        }).then(this._checkResponse);
     }
 
     //получение карточек
@@ -28,7 +28,7 @@ class Api
     {
         return fetch(`${this._baseUrl}/cards`, {
             headers: this._headers,
-        }).then(this._checkReponse);
+        }).then(this._checkResponse);
     }
 
     //редактирование профиля
@@ -41,10 +41,10 @@ class Api
                 name,
                 about,
             }),
-        }).then(this._checkReponse);
+        }).then(this._checkResponse);
     }
 
-    //добавление новой карточки
+    //добавление новых карточек
     addNewCard(name, link)
     {
         return fetch(`${this._baseUrl}/cards`, {
@@ -54,44 +54,35 @@ class Api
                 name,
                 link,
             }),
-        }).then(this._checkReponse);
+        }).then(this._checkResponse);
     }
 
+    //удаление карточек
     deleteCard(id)
     {
-        //удаление карточки
         return fetch(`${this._baseUrl}/cards/${id}`, {
             method: "DELETE",
             headers: this._headers,
-        }).then(this._checkReponse);
+        }).then(this._checkResponse);
     }
 
-    putLike(id)
+    //удаление и постановка лайков
+    changeLikeCardStatus(id, likeStatus)
     {
-        //постановка лайка
         return fetch(`${this._baseUrl}/cards/${id}/likes`, {
-            method: "PUT",
+            method: likeStatus ? "PUT" : "DELETE",
             headers: this._headers,
-        }).then(this._checkReponse);
+        }).then(this._checkResponse);
     }
 
-    deleteLike(id)
+    //редактирование аватара
+    changeAvatar(link)
     {
-        //удаление лайка
-        return fetch(`${this._baseUrl}/cards/${id}/likes`, {
-            method: "DELETE",
-            headers: this._headers,
-        }).then(this._checkReponse);
-    }
-
-    changeAvatar(avatar)
-    {
-        //редактирование аватара
         return fetch(`${this._baseUrl}/users/me/avatar`, {
             method: "PATCH",
             headers: this._headers,
-            body: JSON.stringify({ avatar }),
-        }).then(this._checkReponse);
+            body: JSON.stringify({ avatar: link }),
+        }).then(this._checkResponse);
     }
 }
 
