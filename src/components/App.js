@@ -71,8 +71,8 @@ function App()
         api.changeLikeCardStatus(card._id, !isLiked).then((newCard) =>
         {
             setCards((state) => state.map((c) => (c._id === card._id ? newCard : c)));
-            console.log("cards", newCard);
-        });
+        })
+            .catch((err) => console.log(err));
     }
 
     function handleCardDelete(card)
@@ -82,7 +82,7 @@ function App()
             .then(() =>
                 setCards((state) => state.filter((c) => c._id !== card._id && c))
             )
-            .catch(console.log);
+            .catch((err) => console.log(err))
     }
 
     function handleUpdateUser(user)
@@ -98,7 +98,7 @@ function App()
                 });
                 closeAllPopups();
             })
-            .catch(console.log);
+            .catch((err) => console.log(err));
     }
 
     function handleUpdateAvatar(data)
@@ -113,7 +113,7 @@ function App()
                 });
                 closeAllPopups();
             })
-            .catch(console.log);
+            .catch((err) => console.log(err));
     }
 
     function handleAddNewCard(card)
@@ -125,7 +125,10 @@ function App()
                 setCards([newCard, ...cards]);
                 closeAllPopups();
             })
-            .catch(console.log);
+            .catch((err) =>
+            {
+                console.log('Ошибка отправки данных на сервер');
+            })
     }
 
     return (

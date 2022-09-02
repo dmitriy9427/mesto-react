@@ -21,7 +21,6 @@ function PopupWithForm({
         <h3 className="popup__title">{title}</h3>
         <form className={`popup__form popup__form_type_${name}`}
           onSubmit={onSubmit}
-          noValidate
         >
           {children}
           <button
